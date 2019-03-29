@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return ['name'=>'wu'];
-//    return view('welcome');
+    return view('welcome');
 });
+
+Route::get('/google',\App\Http\Controllers\GoogleController::class);
 //Route::get('/post',)
