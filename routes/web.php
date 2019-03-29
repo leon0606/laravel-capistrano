@@ -12,5 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return ['name'=>'wu'];
+//    return view('welcome');
 });
+//Route::get('/post',)
