@@ -15,5 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/google','\App\Http\Controllers\GoogleController@go');
+Route::get('/google','GoogleController@go');
 //Route::get('/post',)
