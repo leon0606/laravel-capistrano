@@ -52,7 +52,8 @@ namespace :composer do
     task :install do
         on roles(:composer) do
             within release_path do
-                execute :composer, "install --no-dev --quiet --prefer-dist --optimize-autoloader"
+                #execute :composer, "install --no-dev --quiet --prefer-dist --optimize-autoloader"
+                execute :composer, "install --prefer-dist --no-dev --optimize-autoloader"
             end
         end
     end
@@ -83,5 +84,5 @@ namespace :deploy do
     after :updated, "composer:install"
     after :updated, "laravel:fix_permission"
     after :updated, "laravel:configure_dot_env"
-    after :updated, "laravel:migrate"
+    #after :updated, "laravel:migrate"
 end
