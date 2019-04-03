@@ -16,7 +16,9 @@ class UserTest extends TestCase
     public function testExample()
     {
         $this->assertTrue(true);
-        $a = 1;
-        var_dump($a);
+
+        $a = [1, 2, 3];
+        $b = [4, 5, 6];
+        var_dump(compact('a', 'b'));
     }
 }

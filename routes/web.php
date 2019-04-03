@@ -15,5 +15,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/google','GoogleController@go');
-//Route::get('/post',)
+Route::group(['prefix'=>'posts'],function (){
+// 文章列表页
+    Route::get('','PostController@index');
+// 创建文章
+    Route::get('/create','PostController@create');
+    Route::post('','PostController@store');
+// 文章详情页
+    Route::get('/{post}','PostController@show');
+// 编辑文章
+    Route::get('/{post}/edit','PostController@edit');
+    Route::put('/{post}','PostController@update');
+// 删除文章
+    Route::put('/delete','PostController@delete');
+});
+
+
+
