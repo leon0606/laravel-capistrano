@@ -75,12 +75,14 @@ namespace :laravel do
         on roles(:laravel) do
             within release_path do
             execute :php, "artisan migrate --no-interaction --force"
+            end
         end
     end
     task :restart_php_fpm do
-        on roles(:laravel), do
+        on roles(:laravel) do
             within release_path do
             execute :sudo, :service, "php7.2-fpm restart"
+            end
         end
     end
 end
