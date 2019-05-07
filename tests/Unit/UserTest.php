@@ -17,8 +17,10 @@ class UserTest extends TestCase
     {
         $this->assertTrue(true);
 
-        $a = [1, 2, 3];
-        $b = [4, 5, 6];
-        var_dump(compact('a', 'b'));
+        $stime1 = date('Y-m-d',strtotime('-1 month'));
+//        $etime1 = $stime1 + 86399;
+
+        echo ($stime1).PHP_EOL;
+//        echo (date('Y-m-d',$etime1)).PHP_EOL;
     }
 }

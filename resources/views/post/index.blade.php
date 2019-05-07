@@ -11,15 +11,15 @@
                 </ol><!-- Wrapper for slides -->
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img src="http://ww1.sinaimg.cn/large/44287191gw1excbq6tb3rj21400migrz.jpg" alt="..."/>
+                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557137125657&di=0ac7a7fe262b2b7ec7010aa198b117dd&imgtype=0&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fblog%2F201403%2F20%2F20140320135645_YswQ8.jpeg" alt="..."/>
                         <div class="carousel-caption">...</div>
                     </div>
                     <div class="item">
-                        <img src="http://ww3.sinaimg.cn/large/44287191gw1excbq5iwm6j21400min3o.jpg" alt="..."/>
+                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557137125657&di=6810000ab1cabdf93c1d633792dbe95f&imgtype=0&src=http%3A%2F%2Fpic.90sjimg.com%2Fback_pic%2F00%2F04%2F27%2F49%2F8868cd0089191594f00125bfe5a05e90.jpg" alt="..."/>
                         <div class="carousel-caption">...</div>
                     </div>
                     <div class="item">
-                        <img src="http://ww2.sinaimg.cn/large/44287191gw1excbq4kx57j21400migs4.jpg" alt="..."/>
+                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557137125656&di=482de55fe1b8efed8d8eac048662a6f1&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01935a587387aba801219c777877c8.jpg" alt="..."/>
                         <div class="carousel-caption">...</div>
                     </div>
                 </div>
@@ -33,68 +33,19 @@
         <div style="height: 20px;">
         </div>
         <div>
+            @foreach($posts as $post)
             <div class="blog-post">
-                <h2 class="blog-post-title"><a href="/posts/62">你好你好</a></h2>
-                <p class="blog-post-meta">May 14, 2017 by <a href="/user/5">Kassandra Ankunding2</a></p>
-
-                <p>你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好...
-                <p class="blog-post-meta">赞 0 | 评论 0</p>
+                <h2 class="blog-post-title"><a href="/posts/{{$post->id}}">{{$post->title}}</a></h2>
+                <p class="blog-post-meta">{{$post->created_at->toFormattedDateString()}} by <a href="/user/{{$post->user_id}}">{{ $post->user->name }}</a></p>
+                <p>
+                    {!! str_limit($post->content,100,'...') !!}
+                </p>
+                <p class="blog-post-meta">赞 0 | 评论 {{$post->comments_count}}</p>
             </div>
-            <div class="blog-post">
-                <h2 class="blog-post-title"><a href="/posts/61">你好你好</a></h2>
-                <p class="blog-post-meta">May 14, 2017 by <a href="/user/5">Kassandra Ankunding2</a></p>
+            @endforeach
 
-                <p>你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好...
-                <p class="blog-post-meta">赞 0 | 评论 0</p>
-            </div>
-            <div class="blog-post">
-                <h2 class="blog-post-title"><a href="/posts/60">你好你好</a></h2>
-                <p class="blog-post-meta">May 14, 2017 by <a href="/user/5">Kassandra Ankunding2</a></p>
-
-                <p>你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好...
-                <p class="blog-post-meta">赞 0 | 评论 0</p>
-            </div>
-            <div class="blog-post">
-                <h2 class="blog-post-title"><a href="/posts/59">你好你好</a></h2>
-                <p class="blog-post-meta">May 14, 2017 by <a href="/user/5">Kassandra Ankunding2</a></p>
-
-                <p>你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好...
-                <p class="blog-post-meta">赞 0 | 评论 0</p>
-            </div>
-            <div class="blog-post">
-                <h2 class="blog-post-title"><a href="/posts/58">自动放大舒服的撒</a></h2>
-                <p class="blog-post-meta">May 11, 2017 by <a href="/user/5">Kassandra Ankunding2</a></p>
-
-                我们坚持一个中国我们坚持一个中国我们坚持一个中国我们坚持一个中国我们坚持一个中国我们坚持一个中国我们...
-                <p class="blog-post-meta">赞 0 | 评论 0</p>
-            </div>
-            <div class="blog-post">
-                <h2 class="blog-post-title"><a href="/posts/57">反对撒发的撒风反对撒发的撒风反对撒发的撒风</a></h2>
-                <p class="blog-post-meta">May 7, 2017 by <a href="/user/5">Kassandra Ankunding2</a></p>
-
-                反对撒发的撒风反对撒发的撒风反对撒发的撒风反对撒发的撒风反对撒发的撒风反对撒发的撒风反对撒发的撒风反...
-                <p class="blog-post-meta">赞 0 | 评论 0</p>
-            </div>
-
-            <ul class="pagination">
-
-                <li class="disabled"><span>&laquo;</span></li>
-
-
-                <li class="active"><span>1</span></li>
-                <li><a href="http://127.0.0.1:8000/posts?page=2">2</a></li>
-                <li><a href="http://127.0.0.1:8000/posts?page=3">3</a></li>
-                <li><a href="http://127.0.0.1:8000/posts?page=4">4</a></li>
-                <li><a href="http://127.0.0.1:8000/posts?page=5">5</a></li>
-                <li><a href="http://127.0.0.1:8000/posts?page=6">6</a></li>
-                <li><a href="http://127.0.0.1:8000/posts?page=7">7</a></li>
-                <li><a href="http://127.0.0.1:8000/posts?page=8">8</a></li>
-                <li><a href="http://127.0.0.1:8000/posts?page=9">9</a></li>
-                <li><a href="http://127.0.0.1:8000/posts?page=10">10</a></li>
-
-
-                <li><a href="http://127.0.0.1:8000/posts?page=2" rel="next">&raquo;</a></li>
-            </ul>
+            {{--分页--}}
+            {{$posts->links()}}
 
         </div><!-- /.blog-main -->
     </div>

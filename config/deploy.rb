@@ -9,7 +9,7 @@ set :repo_url, "git@github.com:newBigKing/laravel-capistrano.git"
 set :branch, "develop"
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/var/www/laravel-capistrano"
+set :deploy_to, "/var/www/html"
 set :laravel_dotenv_file, '/var/www/secrets/.env'
 
 # Default value for :format is :airbrussh.
@@ -75,7 +75,12 @@ namespace :laravel do
         on roles(:laravel) do
             within release_path do
             execute :php, "artisan migrate --no-interaction --force"
-            end
+        end
+    end
+    task :restart_php_fpm do
+        on roles(:laravel), do
+            within release_path do
+            execute :sudo, :service, "php7.2-fpm restart"
         end
     end
 end
@@ -84,5 +89,6 @@ namespace :deploy do
     after :updated, "composer:install"
     after :updated, "laravel:fix_permission"
     after :updated, "laravel:configure_dot_env"
-    #after :updated, "laravel:migrate"
+    after :updated, "laravel:migrate"
+    after :updated, "laravel:restart_php_fpm"
 end
