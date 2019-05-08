@@ -28,7 +28,8 @@ class UserRepository
         $name = request('name');
         $email = request('email');
         $password = bcrypt(request('password'));
-        $user = User::create(compact('name','email','password'));
+        $avatar ='';
+        $user = User::create(compact('name','email','password','avatar'));
         return $user;
     }
 }
