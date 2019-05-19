@@ -95,7 +95,7 @@ namespace :laravel do
 end
 
 namespace :deploy do
-    #after :updated, "composer:install"
+    after :updated, "composer:install"
     after :updated, "laravel:fix_permission"
     after :updated, "laravel:configure_dot_env"
     after :updated, "laravel:migrate"

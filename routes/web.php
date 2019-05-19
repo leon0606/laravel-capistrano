@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return redirect('/love');
+    return view('love.index');
 });
 Route::get('/love', 'LoveController@index')->name('love');
 Route::get('/login', 'LoginController@index')->name('login');
