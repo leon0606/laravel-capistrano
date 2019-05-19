@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>谨献给我的黄姗小仙女</title>
+    <title>送给我最爱的黄姗小仙女</title>
 
     <style type="text/css">
         @font-face {
