@@ -23,15 +23,13 @@
 <div id="mainDiv">
     <div id="content">
         <div id="code">
-            <span class="comments">/**</span><br />
-            <span class="space"/><span class="comments">*2019—05-20</span><br />
-            <span class="space"/><span class="comments">*/</span><br />
-            Boy name = <span class="keyword">Mr</span> WU<br />
-            Girl name = <span class="keyword">Mrs</span> HUANG<br />
+            <span class="comments">爱你，不在于甜言蜜语，在于真心真意</span><br />
+            <span class="comments">爱你，不在于花前月下，在于全心全意</span><br />
+            <span class="comments">爱你，不在于信誓旦旦，在于实心实意</span><br />
             <span class="comments"></span><br />
-            I don't know what to say<br />
+            5.20我爱你, <br />
             <span class="comments"></span><br />
-            Baby, I just want to say that I'm lucky to know you!<br />
+            地老天荒不离不弃！<br />
             <!-- <span class="comments">// AS time goes on.</span><br />
             The boy can not be separated the girl;<br />
             <span class="comments">// At the same time.</span><br />
