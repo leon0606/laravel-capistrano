@@ -64,7 +64,7 @@
         </div>
     </div>
 </div>
-<audio autoplay="autoplay">
+<audio autoplay loop id="audiojs">
     <source src="/music/soYBAFVAMvWAMYLyAD_-d3dY6FU226.mp3" type="audio/mpeg">
 </audio>
 
@@ -98,6 +98,26 @@
 
         adjustCodePosition();
         $("#code").typewriter();
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        function audioAutoPlay() {
+            var audio = document.getElementById('audiojs');
+            audio.play();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                audio.play();
+            }, false);
+        }
+        audioAutoPlay();
+    });
+
+    if (/i(Phone|P(o|a)d)/.test(navigator.userAgent)) {
+        $(document).one('touchstart',
+            function(e) {
+                $('#audiojs').get(0).touchstart = true;
+                $('#audiojs').get(0).play();
+                return false;
+            });
     }
 </script>
 </body>
