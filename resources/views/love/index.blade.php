@@ -25,11 +25,9 @@
         <div id="code">
             <span class="comments">爱你，不在于甜言蜜语，在于真心真意</span><br />
             <span class="comments">爱你，不在于花前月下，在于全心全意</span><br />
-            <span class="comments">爱你，不在于信誓旦旦，在于实心实意</span><br />
-            <span class="comments"></span><br />
-            5.20我爱你, <br />
-            <span class="comments"></span><br />
-            地老天荒不离不弃！<br />
+            <span class="comments">爱你，不在于信誓旦旦，在于实心实意</span><br /><br>
+            <span class="comments caise">5.20我爱你,</span><br><br>
+            <span class="comments caise">地老天荒, 不离不弃！</span>
             <!-- <span class="comments">// AS time goes on.</span><br />
             The boy can not be separated the girl;<br />
             <span class="comments">// At the same time.</span><br />

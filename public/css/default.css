@@ -17,3 +17,11 @@
 #copyright{margin-top:10px;text-align:center;width:100%;color:#666}
 #errorMsg{width:100%;text-align:center;font-size:24px;position:absolute;top:100px;left:0}
 #copyright a{color:#666}
+#code .caise{
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: -webkit-gradient(linear,left top,right top,color-stop(20%,#e74c3c),color-stop(40%,#f4d03f),color-stop(60%,#2ecc71),color-stop(80%,#5dade2),to(#a569bd));
+    background-image: -webkit-linear-gradient(left,#e74c3c 20%,#f4d03f 40%,#2ecc71 60%,#5dade2 80%,#a569bd 100%);
+    background-image: linear-gradient(to right,#e74c3c 20%,#f4d03f 40%,#2ecc71 60%,#5dade2 80%,#a569bd 100%);
+}
