@@ -78,6 +78,13 @@ namespace :laravel do
             end
         end
     end
+    task :storage do
+            on roles(:laravel) do
+                within release_path do
+                execute :php, "artisan storage:link"
+                end
+            end
+        end
     task :restart_php_fpm do
         on roles(:laravel) do
             within release_path do
@@ -88,9 +95,10 @@ namespace :laravel do
 end
 
 namespace :deploy do
-    after :updated, "composer:install"
+    #after :updated, "composer:install"
     after :updated, "laravel:fix_permission"
     after :updated, "laravel:configure_dot_env"
     after :updated, "laravel:migrate"
+    after :updated, "laravel:storage"
     after :updated, "laravel:restart_php_fpm"
 end

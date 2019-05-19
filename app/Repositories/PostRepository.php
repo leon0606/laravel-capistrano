@@ -30,7 +30,7 @@ class PostRepository
     {
         return $this->post
             ->orderBy('created_at', 'desc')
-            ->withCount('comments')
+            ->withCount(['comments','zans'])
             ->paginate(6);
     }
 

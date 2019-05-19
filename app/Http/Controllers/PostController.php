@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Comment;
 use App\Post;
 use App\Services\PostService;
+use App\Zan;
 use Illuminate\Http\Request;
 
 /**
@@ -133,5 +134,35 @@ class PostController extends Controller
         return back();
     }
 
+    public function zan(Post $post)
+    {
+        $params = [
+            'user_id' => \Auth::id(),
+            'post_id' => $post->id
+        ];
+        Zan::firstOrCreate($params);
+        return back();
+    }
+
+    public function unzan(Post $post)
+    {
+        $post->zan(\Auth::id())->delete();
+        return back();
+    }
+
+    public function search()
+    {
+        // 验证
+        $this->validate(request(),[
+            'query' => 'required'
+        ]);
+
+        // 逻辑
+        $query = request('query');
+        $posts = Post::search($query)->paginate(2);
+
+        // 渲染
+        return view('post.search',compact('posts','query'));
+    }
 
 }

@@ -12,8 +12,9 @@
 */
 
 Route::get('/', function () {
-    return redirect('/login');
+    return redirect('/love');
 });
+Route::get('/love', 'LoveController@index')->name('love');
 Route::get('/login', 'LoginController@index')->name('login');
 Route::post('/login', 'LoginController@login');
 Route::post('/register', 'RegisterController@register');
@@ -33,6 +34,8 @@ Route::group(['prefix' => 'posts', 'middleware' => ['auth:web']], function () {
 // 创建文章
     Route::get('/create', 'PostController@create');
     Route::post('', 'PostController@store');
+// 文章搜索
+    Route::get('/search', 'PostController@search');
 // 文章详情页
     Route::get('/{post}', 'PostController@show');
 // 编辑文章
@@ -44,7 +47,10 @@ Route::group(['prefix' => 'posts', 'middleware' => ['auth:web']], function () {
     Route::post('/image/upload', 'PostController@imageUpload');
     // 评论
     Route::post('/{post}/comment', 'PostController@comment');
-
+    // 赞
+    Route::get('/{post}/zan', 'PostController@zan');
+    // 取消赞
+    Route::get('/{post}/unzan', 'PostController@unzan');
 });
 
 
